@@ -6,3 +6,6 @@ show mac-address-table aging-time vlan 1
 
 Change time
 mac-address-table aging-time <nb>
+
+Clear ARP's table
+clear mac-address-table dynamic
