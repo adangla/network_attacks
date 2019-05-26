@@ -1,3 +1,10 @@
+# Vim
+*.swp
+
+# Slides
+*.pptx
+*.pptx#
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
