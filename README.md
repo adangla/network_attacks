@@ -6,9 +6,11 @@
 `show mac-address-table aging-time vlan 1`
 
 ## Change time
-   enable
-   conf t
-   mac-address-table aging-time <nb>
+```
+enable
+conf t
+mac-address-table aging-time <nb>
+```
 and `CTRL-Z` for quit config mode.
 
 ## Clear ARP's table
