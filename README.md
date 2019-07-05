@@ -14,4 +14,5 @@ mac-address-table aging-time <nb>
 and `CTRL-Z` for quit config mode.
 
 ## Clear ARP's table
+`enable`
 `clear mac-address-table dynamic` 
