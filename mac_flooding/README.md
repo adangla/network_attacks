@@ -21,5 +21,10 @@ send it on the port where the destination is. So the next question is how the
 switch does that?
 
 ## How a switch works ?
+Compare to the hub, a switch contains a correspondence table between mac
+addresses and ports. When a frame arrive in the switch, it knows where it
+come from. For remember, an Ethernet frame contain the source and the
+destination, so switch have just to take the source and the port where it
+come from and put both together in the table.
 
 
