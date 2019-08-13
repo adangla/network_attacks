@@ -5,7 +5,7 @@ import sys
 import threading
 import time
 
-gw_ip = "192.168.0.45"
+gw_ip = "192.168.0.21"
 target_ip = "192.168.0.2"
 broadcast = "ff:ff:ff:ff:ff:ff"
 
