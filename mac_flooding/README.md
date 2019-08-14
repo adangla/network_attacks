@@ -17,6 +17,7 @@ Transform a switch into a hub.
 ## What is the difference between a switch and a hub?
 When it receive a frame a hub repeat it on all its ports and a switch will
 send it on the port where the destination is, as illustrated below.
+### Example:
 ![alt text](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/hub.png "Hub operation")
 ![alt text](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/switch.png "Hub operation")
 
@@ -30,7 +31,24 @@ the corresponding port in the learning table. And to fill this table, the
 switch knows where the frame come from. For remember, an Ethernet frame
 contain the source and the destination, so switch have just to take the
 source and the port where it come from and put both together in the table.
-And that enought to understand the attack!
+
+### Example:
+Refer to the previous picture, when **"A"** send a frame to **"B"** with a switch in the architecture. Imagine the switch has its table on the following state :
+
+| MAC | Port |
+| --- | --- |
+| Mac@ B | Port 2 |
+| Mac@ C | Port 3 |
+
+When receiving the frame, it will see that it come from the **port 1** and the frame contain the **mac@ A in source** and **mac@B in destination**.  The table is update :
+
+| MAC | Port |
+| --- | --- |
+| Mac@ B | Port 2 |
+| Mac@ C | Port 3 |
+| Mac@ A | Port 1 |
+ 
+And as the destination is mac@B, **the frame is sent to port 2.**
 
 ## So how to transform a switch into a hub?
 The main idea is to saturate the learning table. So the attacker (you) will send lots of random MAC address in order to fill this table.
