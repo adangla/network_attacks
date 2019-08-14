@@ -16,8 +16,11 @@ Transform a switch into a hub.
 # ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Explanations
 ## What is the difference between a switch and a hub?
 When it receive a frame a hub repeat it on all its ports and a switch will
-send it on the port where the destination is. So the next question is how the
-switch does that?
+send it on the port where the destination is, as illustrated below.
+![alt text](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/hub.png "Hub operation")
+![alt text](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/switch.png "Hub operation")
+
+So the next question is how the switch does that?
 
 ## How a switch works?
 Compare to the hub, a switch contains a correspondence table between mac
