@@ -18,8 +18,8 @@ Transform a switch into a hub.
 When it receive a frame a hub repeat it on all its ports and a switch will
 send it on the port where the destination is, as illustrated below.
 ### Example:
-![alt text](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/hub.png "Hub operation")
-![alt text](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/switch.png "Hub operation")
+![Hub operation](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/hub.png "Hub operation")
+![Switch operation](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/switch.png "Switch operation")
 
 So the next question is how the switch does that?
 
@@ -56,9 +56,15 @@ And as the destination is mac@B, **the frame is sent to port 2.**
 
 ## So how to transform a switch into a hub?
 The main idea is to saturate the learning table. So the attacker (you) will send lots of random MAC address in order to fill this table.
-The switch goes to *fail-open* mode and starts acting as a hub and broadcasts the frames to all ports.
+The switch goes to *fail-open* mode and starts acting as a hub and broadcasts the frames to all ports as MAC Address Table is full and it is unable to save new MAC addresses.
 
-# ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Solution
+## What are benefits of the attacker?
+As the attacker is a part of the network, the attacker will also get the data packets intended for the victim machine. So that the attacker will be able to steal sensitive data from the communication of the victim and other computers.
+
+
+# ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) A possible implementation
+In our case, we use the switch Cisco Catalyst 2950 and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
+![Start scapy and ls](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/scapy_lscmd.png "Start scapy and ls")
 
 ---
 
