@@ -66,7 +66,7 @@ As the attacker is a part of the network, the attacker will also get the data pa
 In our case, we use the switch **Cisco Catalyst 2950** and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
 
 ## Scapy
-Before starting, some explication about Scapy. Scapy is used via a command-line interactive mode or inside Python scripts.Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to run Scapy as root. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
+Before starting, some explication about Scapy. Scapy is used via a command-line interactive mode or inside Python scripts.Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to **run Scapy as root**. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
 
 ![Start scapy and ls](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
 
@@ -91,7 +91,7 @@ than the IP address of the latter and is placed in the same subnetwork.
 In this case, this computer will put its transmission on hold and make an ARP request for a level 2 broadcast (Ethernet). 
 
 He will ask "What is the MAC address of this IP address, answer me at this address" to all the elements on the network.
-To do this, it will fill the ARP operation field with 01 which corresponds to a request (02 being a response), the source MAC and source IP field with its MAC and IP, the destination IP field with the IP of the computer where it wants the MAC address and finally the destination MAC which will simply be the broadcast address.
+To do this, it will fill the ARP **operation field** with **01 which corresponds to a request (02 being a response)**, the source MAC and source IP field with its MAC and IP, the destination IP field with the IP of the computer where it wants the MAC address and finally the destination MAC which will simply be the broadcast address.
 
 Since this is a broadcast, all computers in the segment will receive the request. By observing its content, they will be able to determine the IP address to which the search relates. The machine that has this IP address will be the only one to respond by sending the sending machine an ARP response such as "I am IP address, my MAC address is MAC address". To send this response to the right computer, it creates an entry in its ARP cache from the data contained in the ARP request it has just received.
 
