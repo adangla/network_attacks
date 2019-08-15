@@ -63,8 +63,26 @@ As the attacker is a part of the network, the attacker will also get the data pa
 
 
 # ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) A possible implementation
-In our case, we use the switch Cisco Catalyst 2950 and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
+In our case, we use the switch **Cisco Catalyst 2950** and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
+
+## Scapy
+Before starting, some explication about Scapy. Scapy is used via a command-line interactive mode or inside Python scripts.Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to run Scapy as root. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
+
 ![Start scapy and ls](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
+
+As you can see, you can run the ls() function to see the fields and default values for any protocol as shown previously in the screenshot for ARP and Ethernet (`ls(ARP)`, `ls(Ether)`). 
+
+**If you have multiple network interfaces on your computer**, you might have to double check which interface Scapy will use by default. Run scapy from the terminal and run the `conf` command. See what interface Scapy will use by default by looking at the `iface` value:
+```
+conf.iface
+```
+If the default interface is not the one you will use, you can change the value like this:
+```
+conf.iface="eth0"
+```
+*Instead of `eth0`, use the interface you want to be your default*
+
+If you are constantly switching back and forth between interfaces, you can specify the interface to use in argument when you run Scapy commands.
 
 ---
 
