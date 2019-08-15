@@ -64,7 +64,7 @@ As the attacker is a part of the network, the attacker will also get the data pa
 
 # ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) A possible implementation
 In our case, we use the switch Cisco Catalyst 2950 and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
-![Start scapy and ls](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/scapy_lscmd.png "Start scapy and ls")
+![Start scapy and ls](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
 
 ---
 
