@@ -85,10 +85,10 @@ conf.iface="eth0"
 If you are constantly switching back and forth between interfaces, you can specify the interface to use in argument when you run Scapy commands.
 
 ## ARP
-We assume that a computer connected to a computer network wishes to transmit an Ethernet frame to another computer of which it is not familiar. 
-than the IP address of the latter and is placed in the same subnetwork.
+We assume that a computer (A) connected to a computer network wishes to transmit an Ethernet frame to another computer (B).
+**It only has the IP address and is placed in the same subnetwork.**
 
-In this case, this computer will put its transmission on hold and make an ARP request for a level 2 broadcast (Ethernet). 
+In this case, this computer (A) will hold its transmission and make an ARP request for a level 2 broadcast (Ethernet). 
 
 He will ask "What is the MAC address of this IP address, answer me at this address" to all the elements on the network.
 To do this, it will fill the ARP **operation field** with **01 which corresponds to a request (02 being a response)**, the source MAC and source IP field with its MAC and IP, the destination IP field with the IP of the computer where it wants the MAC address and finally the destination MAC which will simply be the broadcast address.
