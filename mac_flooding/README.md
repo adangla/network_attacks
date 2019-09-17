@@ -18,8 +18,8 @@ Transform a switch into a hub.
 When it receive a frame a hub repeat it on all its ports and a switch will
 send it on the port where the destination is, as illustrated below.
 ### Example:
-![Hub operation](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/hub.png "Hub operation")
-![Switch operation](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/switch.png "Switch operation")
+![Hub operation](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/hub.png "Hub operation")
+![Switch operation](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch.png "Switch operation")
 
 So the next question is how the switch does that?
 
@@ -68,7 +68,7 @@ In our case, we use the switch **Cisco Catalyst 2950** and the Python library [S
 ## Scapy
 Before starting, some explication about Scapy. Scapy is used via a command-line interactive mode or inside Python scripts.Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to **run Scapy as root**. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
 
-![Start scapy and ls](https://github.com/lyonaify/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
+![Start scapy and ls](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
 
 As you can see, you can run the ls() function to see the fields and default values for any protocol as shown previously in the screenshot for ARP and Ethernet (`ls(ARP)`, `ls(Ether)`). 
 
@@ -100,6 +100,6 @@ The machine that made the ARP request receives the response, updates its ARP cac
 ---
 
 # Authors
-* **[Aliona DANGLA](https://github.com/Lyonaify)**
+* **[Aliona DANGLA](https://github.com/adangla)**
 
-See also the list of [contributors](https://github.com/Lyonaify/network_attacks/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/adangla/network_attacks/contributors) who participated in this project.
