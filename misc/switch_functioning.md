@@ -1,11 +1,5 @@
-# ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) What is the difference between a switch and a hub?
-When it receive a frame a hub repeat it on all its ports and a switch will
-send it on the port where the destination is, as illustrated below.
-### Example:
-![Hub operation](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/hub.png "Hub operation")
-![Switch operation](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch.png "Switch operation")
-
-So the next question is how the switch does that?
+# ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
+* [What is the difference between a hub and a switch?](https://github.com/adangla/network_attacks/blob/master/misc/diff_switch_hub.md)
 
 # ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) How a switch works?
 Compare to the hub, a switch contains a correspondence table between mac
