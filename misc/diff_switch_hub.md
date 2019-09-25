@@ -6,6 +6,8 @@ send it on the port where the destination is, as illustrated below.
 ![Switch operation](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch.png "Switch operation")
 
 So the next question is how the switch does that?
+Explanation [here](https://github.com/adangla/network_attacks/blob/master/misc/switch_functioning.md)
+
 
 ---
 
