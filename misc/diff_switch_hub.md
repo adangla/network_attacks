@@ -1,4 +1,4 @@
-## What is the difference between a switch and a hub?
+# ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) What is the difference between a switch and a hub?
 When it receive a frame a hub repeat it on all its ports and a switch will
 send it on the port where the destination is, as illustrated below.
 ### Example:
@@ -36,4 +36,11 @@ When receiving the frame, it will see that it come from the **port 1** and the f
 | Mac@ C | Port 3 |
 | Mac@ A | Port 1 |
  
-And as the destination is mac@B, **the frame is sent to port 2.**
+And as the destination is mac@B, **the frame is sent to port 2
+
+---
+
+# Authors
+* **[Aliona DANGLA](https://github.com/adangla)**
+
+See also the list of [contributors](https://github.com/adangla/network_attacks/contributors) who participated in this project.
