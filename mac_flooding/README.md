@@ -13,11 +13,11 @@ information in this repository to break the law.
 
 Transform a switch into a hub.
 
-# ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
+# ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Explanations
+## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
 * [What is the difference between a hub and a switch?](https://github.com/adangla/network_attacks/blob/master/misc/diff_switch_hub.md)
 * [How a switch works?](https://github.com/adangla/network_attacks/blob/master/misc/switch_functioning.md)
 
-# ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Explanations
 ## So how to transform a switch into a hub?
 The main idea is to saturate the learning table. So the attacker (you) will send lots of random MAC address in order to fill this table.
 The switch goes to *fail-open* mode and starts acting as a hub and broadcasts the frames to all ports as MAC Address Table is full and it is unable to save new MAC addresses.
@@ -27,6 +27,11 @@ As the attacker is a part of the network, the attacker will also get the data pa
 
 
 # ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) A possible implementation
+## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
+* Scapy
+* ARP
+
+## Our environment
 In our case, we use the switch **Cisco Catalyst 2950** and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
 
 ## Scapy
