@@ -107,6 +107,7 @@ conf.iface="eth0"
 *Instead of `eth0`, use the interface you want to be your default*
 
 If you are constantly switching back and forth between interfaces, you can specify the interface to use in argument when you run Scapy commands.
+
 ---
 </details>
 
@@ -125,6 +126,7 @@ To do this, it will fill the ARP **operation field** with **01 which corresponds
 Since this is a broadcast, all computers in the segment will receive the request. By observing its content, they will be able to determine the IP address to which the search relates. The machine that has this IP address will be the only one to respond by sending the sending machine an ARP response such as "I am IP address, my MAC address is MAC address". To send this response to the right computer, it creates an entry in its ARP cache from the data contained in the ARP request it has just received.
 
 The machine that made the ARP request receives the response, updates its ARP cache and can therefore send the message that it had put on hold to the computer concerned.
+
 ---
 </details>
 
