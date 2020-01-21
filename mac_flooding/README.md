@@ -17,6 +17,7 @@ Transform a switch into a hub.
 ## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
 <details>
 <summary>What is the difference between a hub and a switch?</summary>
+ 
 ### ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) What is the difference between a switch and a hub?
 When it receive a frame a hub repeat it on all its ports and a switch will
 send it on the port where the destination is, as illustrated below.
@@ -29,6 +30,7 @@ So the next question is how the switch does that?
 
 <details>
 <summary>How a switch works?</summary>
+ 
 ### ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) How a switch works?
 Compare to the hub, a switch contains a correspondence table between mac
 addresses and ports called learning table. When a frame arrive in the
@@ -59,7 +61,6 @@ When receiving the frame, it will see that it come from the **port 1** and the f
 | Mac@ A | Port 1 |
  
 And as the destination is mac@B, **the frame is sent to port 2
-
 </details>
 
 ## So how to transform a switch into a hub?
