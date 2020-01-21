@@ -86,13 +86,10 @@ After the attack the switch work as shown below:
 
 # ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) A possible implementation
 ## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
-* Scapy
-* ARP
+<details>
+<summary>Scapy</summary>
 
-## Our environment
-In our case, we use the switch **Cisco Catalyst 2950** and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
-
-## Scapy
+---
 Before starting, some explication about Scapy. Scapy is used via a command-line interactive mode or inside Python scripts.Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to **run Scapy as root**. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
 
 ![Start scapy and ls](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
@@ -110,8 +107,13 @@ conf.iface="eth0"
 *Instead of `eth0`, use the interface you want to be your default*
 
 If you are constantly switching back and forth between interfaces, you can specify the interface to use in argument when you run Scapy commands.
+---
+</details>
 
-## ARP
+<details>
+<summary>ARP</summary>
+
+---
 We assume that a computer (A) connected to a computer network wishes to transmit an Ethernet frame to another computer (B).
 **It only has the IP address and is placed in the same subnetwork.**
 
@@ -123,6 +125,11 @@ To do this, it will fill the ARP **operation field** with **01 which corresponds
 Since this is a broadcast, all computers in the segment will receive the request. By observing its content, they will be able to determine the IP address to which the search relates. The machine that has this IP address will be the only one to respond by sending the sending machine an ARP response such as "I am IP address, my MAC address is MAC address". To send this response to the right computer, it creates an entry in its ARP cache from the data contained in the ARP request it has just received.
 
 The machine that made the ARP request receives the response, updates its ARP cache and can therefore send the message that it had put on hold to the computer concerned.
+---
+</details>
+
+## Our environment
+In our case, we use the switch **Cisco Catalyst 2950** and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
 
 ---
 
