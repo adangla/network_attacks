@@ -76,9 +76,12 @@ When the MAC Address Table is full and it is unable to save new MAC addresses, t
 
 ## What are benefits of the attacker?
 As the attacker is a part of the network, the attacker will also get the data packets intended for the victim machine. So that the attacker will be able to steal sensitive data from the communication of the victim and other computers.
-Before the attack the switch work as shown below
+Before the attack the switch work as shown below:
+
 ![Switch conventional use](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-conventionnal-use.png "Switch conventional use")
-After the attack the switch work as shown below
+
+After the attack the switch work as shown below:
+
 ![Switch after attack](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-after-attack.png "Switch after attack")
 
 # ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) A possible implementation
