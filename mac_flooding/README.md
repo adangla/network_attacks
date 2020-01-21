@@ -90,7 +90,10 @@ After the attack the switch work as shown below:
 <summary>Scapy</summary>
 
 ---
-Before starting, some explication about [Scapy](https://scapy.net/). Scapy is used via a command-line interactive mode or inside Python scripts.Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to **run Scapy as root**. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
+Before starting, some explication about [Scapy](https://scapy.net/). 
+> Scapy is a powerful Python-based interactive packet manipulation program and library. It is able to forge or decode packets of a wide number of protocols, send them on the wire, capture them, store or read them using pcap files, match requests and replies, and much more. [(source)](https://github.com/secdev/scapy)
+
+Scapy is used via a command-line interactive mode or inside Python scripts. Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to **run Scapy as root**. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
 
 ![Start scapy and ls](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
 
