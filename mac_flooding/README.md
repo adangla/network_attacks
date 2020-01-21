@@ -128,8 +128,10 @@ Also, there is possibly more address in the ARP tables (for example, the default
 
 We assume that a computer (A) connected to a computer network wishes to transmit an Ethernet frame to another computer (B).
 **It only has the IP address and is placed in the same subnetwork.** (In our exemple, we will ping B with A and we will use A for the IP 192.168.1.12 and B for 192.168.1.58.)
-![Ping](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/ping-58.png)
-![Ping in Wireshark](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/ping-wireshark.png)
+
+![Ping](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/ping-58.PNG)
+
+![Ping in Wireshark](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/ping-wireshark.PNG)
 
 
 In this case, this computer (A) will hold its transmission and make an ARP request for a level 2 broadcast (Ethernet). 
