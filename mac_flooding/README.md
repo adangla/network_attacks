@@ -72,11 +72,14 @@ And as the destination is mac@B, **the frame is sent to port 2**
 
 ## So how to transform a switch into a hub?
 The main idea is to saturate the learning table. So the attacker (you) will send lots of random MAC address in order to fill this table.
-The switch goes to *fail-open* mode and starts acting as a hub and broadcasts the frames to all ports as MAC Address Table is full and it is unable to save new MAC addresses.
+When the MAC Address Table is full and it is unable to save new MAC addresses, the switch goes to *fail-open* mode and starts acting as a hub and broadcasts the frames to all ports.
 
 ## What are benefits of the attacker?
 As the attacker is a part of the network, the attacker will also get the data packets intended for the victim machine. So that the attacker will be able to steal sensitive data from the communication of the victim and other computers.
-
+Before the attack the switch work as shown below
+![Switch conventional use](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-conventionnal-use.png "Switch conventional use")
+After the attack the switch work as shown below
+![Switch after attack](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-after-attack.png "Switch after attack")
 
 # ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) A possible implementation
 ## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
