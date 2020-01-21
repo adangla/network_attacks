@@ -21,7 +21,7 @@ Transform a switch into a hub.
 ---
 When it receive a frame a hub repeat it on all its ports and a switch will
 send it on the port where the destination is, as illustrated below.
-#### Example:
+### Example:
 ![Hub operation](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/hub.png "Hub operation")
 
 ---
@@ -49,7 +49,7 @@ contain the source and the destination as shown below. There is more in Ethernet
 
 The switch have just to take the source and the port where it come from and put both together in the table.
 
-#### Example:
+### Example:
 Refer to the previous picture, when **"A"** send a frame to **"B"** with a switch in the architecture. Imagine the switch has its table on the following state :
 
 | MAC | Port |
@@ -120,7 +120,7 @@ To know your interfaces (for Ubuntu) run `ip a`
 The principle of ARP (Address Resolution Protocol) is just to have a correspondence table between L2 addresses and L3 addresses. 
 L2 addresses are usually used to communicate in a local network and L3 addresses are usually used to communicate in internet.
 
-#### Example
+### Example:
 To illustrate the functioning, the next sketch illustrate briefly an architecture with all ARP tables. All computers known their MAC@ and IP@, and we suppose that all computers know the other IP@ (lines without MAC@ in tables are just for the illustration, in a real context there is no line with an empty field).
 Also, there is possibly more address in the ARP tables (for example, the default gateway), but we will ignore them as we do not need them for the explication.
 
