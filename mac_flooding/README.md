@@ -14,7 +14,7 @@ information in this repository to break the law.
 Transform a switch into a hub.
 
 # ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Explanations
-## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
+## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
 <details>
 <summary>What is the difference between a switch and a hub?</summary>
 
@@ -70,11 +70,11 @@ And as the destination is mac@B, **the frame is sent to port 2**
 ---
 </details>
 
-## So how to transform a switch into a hub?
+## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) So how to transform a switch into a hub?
 The main idea is to saturate the learning table. So the attacker (you) will send lots of random MAC address in order to fill this table.
 When the MAC Address Table is full and it is unable to save new MAC addresses, the switch goes to *fail-open* mode and starts acting as a hub and broadcasts the frames to all ports.
 
-## What are benefits of the attacker?
+## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) What are benefits of the attacker?
 As the attacker is a part of the network, the attacker will also get the data packets intended for the victim machine. So that the attacker will be able to steal sensitive data from the communication of the victim and other computers.
 Before the attack the switch work as shown below:
 
@@ -130,7 +130,7 @@ The machine that made the ARP request receives the response, updates its ARP cac
 ---
 </details>
 
-## Our environment
+## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Our environment
 In our case, we use the switch **Cisco Catalyst 2950** and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
 
 ---
