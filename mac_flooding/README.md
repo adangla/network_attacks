@@ -78,11 +78,11 @@ When the MAC Address Table is full and it is unable to save new MAC addresses, t
 As the attacker is a part of the network, the attacker will also get the data packets intended for the victim machine. So that the attacker will be able to steal sensitive data from the communication of the victim and other computers.
 Before the attack the switch work as shown below:
 
-![Switch conventional use](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-conventionnal-use.png#center)
+![Switch conventional use](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-conventionnal-use.png)
 
 After the attack the switch work as shown below:
 
-![Switch after attack](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-after-attack.png#center)
+![Switch after attack](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-after-attack.png)
 
 # ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) ![#c5f015](https://placehold.it/15/f963a1/000000?text=+) A possible implementation
 ## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
