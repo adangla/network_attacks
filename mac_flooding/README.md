@@ -127,16 +127,27 @@ Also, there is possibly more address in the ARP tables (for example, the default
 ![ARP architecture example](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-empty-table-archi.png)
 
 We assume that a computer (A) connected to a computer network wishes to transmit an Ethernet frame to another computer (B).
-**It only has the IP address and is placed in the same subnetwork.**
+**It only has the IP address and is placed in the same subnetwork.** (In our exemple, we will ping B with A and we will use A for the IP 192.168.1.12 and B for 192.168.1.58.)
+![Ping](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/ping-58.png)
+![Ping in Wireshark](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/ping-wireshark.png)
+
 
 In this case, this computer (A) will hold its transmission and make an ARP request for a level 2 broadcast (Ethernet). 
 
 He will ask "What is the MAC address of this IP address, answer me at this address" to all the elements on the network.
+![ARP request in Wireshark](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-ask1.PNG)
 To do this, it will fill the ARP **operation field** with **01 which corresponds to a request (02 being a response)**, the source MAC and source IP field with its MAC and IP, the destination IP field with the IP of the computer where it wants the MAC address and finally the destination MAC which will simply be the broadcast address.
+![ARP request detail](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-detail1.png)
 
 Since this is a broadcast, all computers in the segment will receive the request. By observing its content, they will be able to determine the IP address to which the search relates. The machine that has this IP address will be the only one to respond by sending the sending machine an ARP response such as "I am IP address, my MAC address is MAC address". To send this response to the right computer, it creates an entry in its ARP cache from the data contained in the ARP request it has just received.
+![ARP reply in Wireshark](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-reply1.PNG)
+![ARP reply detail](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-detail2.png)
 
 The machine that made the ARP request receives the response, updates its ARP cache and can therefore send the message that it had put on hold to the computer concerned.
+As you can see in our exemple, the ARP table does not contain B (192.168.1.58):
+![ARP table before ping](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-table.png)
+After the table as been updated:
+![ARP table after ping](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-with-58.png)
 
 ---
 </details>
