@@ -14,7 +14,7 @@ information in this repository to break the law.
 Transform a switch into a hub.
 
 # ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) Explanations
-## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
+## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Requirements
 <details>
 <summary>What is the difference between a switch and a hub?</summary>
 
@@ -90,7 +90,7 @@ After the attack the switch work as shown below:
 <summary>Scapy</summary>
 
 ---
-Before starting, some explication about Scapy. Scapy is used via a command-line interactive mode or inside Python scripts.Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to **run Scapy as root**. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
+Before starting, some explication about [Scapy](https://scapy.net/). Scapy is used via a command-line interactive mode or inside Python scripts.Scapy has its own syntax, so you don’t need to know much Python to get started. As some of Scapy functions dealing with sending traffic, you will need to be able to **run Scapy as root**. You should be able to run it from the terminal (`sudo scapy`), just like we did with Python, and get something that looks like this:
 
 ![Start scapy and ls](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
 
@@ -108,6 +108,8 @@ conf.iface="eth0"
 
 If you are constantly switching back and forth between interfaces, you can specify the interface to use in argument when you run Scapy commands.
 
+To know your interfaces (for Ubuntu) run `ip a`
+
 ---
 </details>
 
@@ -115,6 +117,15 @@ If you are constantly switching back and forth between interfaces, you can speci
 <summary>ARP</summary>
 
 ---
+The principle of ARP (Address Resolution Protocol) is just to have a correspondence table between L2 addresses and L3 addresses. 
+L2 addresses are usually used to communicate in a local network and L3 addresses are usually used to communicate in internet.
+
+#### Example
+To illustrate the functioning, the next sketch illustrate briefly an architecture with all ARP tables. All computers known their MAC@ and IP@, and we suppose that all computers know the other IP@ (lines without MAC@ in tables are just for the illustration, in a real context there is no line with an empty field).
+Also, there is possibly more address in the ARP tables (for example, the default gateway), but we will ignore them as we do not need them for the explication.
+
+![ARP architecture example](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-empty-table-archi.png)
+
 We assume that a computer (A) connected to a computer network wishes to transmit an Ethernet frame to another computer (B).
 **It only has the IP address and is placed in the same subnetwork.**
 
