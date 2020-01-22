@@ -97,7 +97,7 @@ Scapy is used via a command-line interactive mode or inside Python scripts. Scap
 
 ![Start scapy and ls](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/scapy-lscmd.png "Start scapy and ls")
 
-As you can see, you can run the ls() function to see the fields and default values for any protocol as shown previously in the screenshot for ARP and Ethernet (`ls(ARP)`, `ls(Ether)`). 
+In Scapy, protocols are represented by object, you can have a list of it with the command `ls()`. To have the detail of the protocol's header, you can also use `ls()` and put the object in parameter. For example: `ls(ARP)` or `ls(Ether)`, as show in the screenshot above.
 
 **If you have multiple network interfaces on your computer**, you might have to double check which interface Scapy will use by default. Run scapy from the terminal and run the `conf` command. See what interface Scapy will use by default by looking at the `iface` value:
 ```
@@ -111,7 +111,43 @@ conf.iface="eth0"
 
 If you are constantly switching back and forth between interfaces, you can specify the interface to use in argument when you run Scapy commands.
 
-To know your interfaces (for Ubuntu) run `ip a`
+To know your interfaces (for Ubuntu) run `ip a`.
+![ip a example](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/ifacesexample.png)
+
+To create a packet, you just need to create an object of the needed protocols.
+For example, to create an ARP packet:
+```
+ARP()
+```
+
+If you need to encapsulate multiple protocol, you have to use `/`.
+For example to create a TCP/IP packet you do:
+```
+pkt = IP()/TCP()
+pkt[IP].src = '192.168.1.42'
+```
+or
+```
+pkt = IP(src='192.168.1.42')/TCP()
+```
+
+To print your packet just use the show function:
+```
+pkt.show()
+```
+
+![Scapy show function](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/scapy-autofill.png)
+
+As you can see on the screenshot, some fields of your packet has been automatically filled.
+
+When your packet is ready you can send it by using the function `send()` (or `sendp()` if it is a L2 packet)
+```
+pkt = IP()/TCP()
+frame = Ether()
+send(pkt)
+sendp(Ether)
+```
+`send` has multiple option that you should look in documentation.
 
 ---
 </details>
@@ -161,6 +197,9 @@ As you can see in our exemple, the ARP table does not contain B (192.168.1.58):
 After the table as been updated:
 
 ![ARP table after ping](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-with-58.png)
+
+
+![ARP tables achitecture after ping](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/arp-tables-after.png)
 
 ---
 </details>
