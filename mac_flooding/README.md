@@ -207,6 +207,56 @@ After the table as been updated:
 ## ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Our environment
 In our case, we use the switch **Cisco Catalyst 2950** and the Python library [Scapy](https://scapy.net/). We will make ARP responses send in Ethernet with random source MAC addresses. It does not matter what do you put inside your Ethernet frame, the most important thing is that the frame is correct. We use ARP for educational purpose as we will use weakness of this protocol for next exercises.
 
+In our case, we gave the switches already configured. Here is a really quick explanation of how to configure them.
+<details>
+ <summary>Quick and not official explanation of Cisco's switch configuration under Ubuntu 18.04 lts</summary>
+ 
+ [For more detailed documentation please refer to constructor's one](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960xr/hardware/quick/guide/b_gsg_2960xr.html#task_DF388611FF3C43C990C7F291A8D0D8BC)
+ 
+ <details>
+ <summary>In case of you need to reset the switch</summary>
+ 
+---
+
+* Press the button around 10 sec. The leds start blinking around after 3 seconds and stop blinking and stay alight after 10, this is the signal that the reset as been launched.
+* When the leds:
+   * SYST
+   * STAT
+   * MAST (if applicable)
+   
+are the only leds stable and alight, the reset is done.
+
+---
+
+ </details>
+ 
+* Launch the "Express setup mode" by push the button around 3 seconds (All leds should be alight exept RPS)
+* Connect your computer to the management port
+* Check that the DHCP of the Express setup mode gives you an IP (it should be an 10/8 address like (randomly) 10.0.1.2/24)
+* Open a navigator and go to 10.0.0.1. You will have a login popup. Put nothing in username and 'cisco' in password. After login, you should have a page like below.
+![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch1.png)
+Configure it as you want but do not forget what you put. Enable telnet in order to see the consequences of the attack.
+![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch2.png)
+Don't forget to change the mask
+![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch3.png)
+Do not fear the warning popup.
+![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch4.png)
+![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch5.png)
+* Wait the config to be pushed, the leds:
+   * SYST
+   * STAT
+   * MAST (if applicable)
+   
+should be fixe and alight when it is done.
+
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-switch.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-nm.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa3.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa2.png)
+
+</details>
+
 ---
 
 # Authors
