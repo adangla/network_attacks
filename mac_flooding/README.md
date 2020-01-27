@@ -296,7 +296,7 @@ You will access to the switch's management page.
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-show-count.png)
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/attack-scapy.png)
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/attack-wireshark.png)
-![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-after-attack.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-count-fill.png)
 
 ---
 
