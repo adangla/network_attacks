@@ -211,6 +211,8 @@ In our case, we gave the switches already configured. Here is a really quick exp
 <details>
  <summary>Quick and not official explanation of Cisco's switch configuration under Ubuntu 18.04 lts</summary>
  
+---
+
  [For more detailed documentation please refer to constructor's one](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960xr/hardware/quick/guide/b_gsg_2960xr.html#task_DF388611FF3C43C990C7F291A8D0D8BC)
  
  <details>
@@ -232,8 +234,8 @@ are the only leds stable and alight, the reset is done.
  
 * Launch the "Express setup mode" by push the button around 3 seconds (All leds should be alight exept RPS)
 * Connect your computer to the management port
-* Check that the DHCP of the Express setup mode gives you an IP (it should be an 10/8 address like (randomly) 10.0.0.2/24)
-* Open a navigator and go to 10.0.0.1. You will have a login popup. Put nothing in username and 'cisco' in password. After login, you should have a page like below.
+* Check that the DHCP of the Express setup mode gives you an IP (it should be an 10/8 address like (randomly) `10.0.0.2/24`)
+* Open a navigator and go to `10.0.0.1`. You will have a login popup. Put nothing in username and 'cisco' in password. After login, you should have a page like below.
 ![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch1.png)
 Configure it as you want but do not forget what you put. For this exercice, enable telnet in order to see the consequences of the attack.
 ![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch2.png)
@@ -284,7 +286,17 @@ Click on continue button on the warning page.
 You will access to the switch's management page.
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-manager.png)
 
+---
+
 </details>
+
+
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-telnet.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-show-table.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-show-count.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/attack-scapy.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/attack-wireshark.png)
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-after-attack.png)
 
 ---
 
