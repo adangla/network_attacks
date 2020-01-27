@@ -232,10 +232,10 @@ are the only leds stable and alight, the reset is done.
  
 * Launch the "Express setup mode" by push the button around 3 seconds (All leds should be alight exept RPS)
 * Connect your computer to the management port
-* Check that the DHCP of the Express setup mode gives you an IP (it should be an 10/8 address like (randomly) 10.0.1.2/24)
+* Check that the DHCP of the Express setup mode gives you an IP (it should be an 10/8 address like (randomly) 10.0.0.2/24)
 * Open a navigator and go to 10.0.0.1. You will have a login popup. Put nothing in username and 'cisco' in password. After login, you should have a page like below.
 ![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch1.png)
-Configure it as you want but do not forget what you put. Enable telnet in order to see the consequences of the attack.
+Configure it as you want but do not forget what you put. For this exercice, enable telnet in order to see the consequences of the attack.
 ![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch2.png)
 Don't forget to change the mask
 ![Configuration page of Cisco's switch](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cisco-conf-switch3.png)
@@ -248,12 +248,41 @@ Do not fear the warning popup.
    * MAST (if applicable)
    
 should be fixe and alight when it is done.
+If you try to access to the switch's management page directly after those steps, you will have probably some troubles.
 
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-switch.png)
+
+As there is no DHCP server anymore (Express setup is done), your IP address is probably is still 10.0.0.2 (or other, you can check with the command `ip a`). If you did not put to your computer, an IP of the same network, you can't access to the management page.
+
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa.png)
+
+I suggest deactivating the network-manager service with the command:
+`(sudo) systemctl stop network-manager`
+I had some trouble with it like the fixed IP I put was deleted. 
+
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-nm.png)
+
+In our configuration, we do not have an DHCP server, so we fixed the IP by hand. To do it we use the command:
+`(sudo) ip addr add <the IP you want to add>/<sub net mask> dev <The interface to which you want to add the IP>`
+
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa3.png)
+
+You can delete useless IP with:
+`(sudo) ip addr del <the IP you want to delete>/<sub net mask> dev <The interface to which you want to delete the IP>`
+
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa2.png)
+
+When it is done, you will have a login popup.
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/connect-login.png)
+
+Put the password you put in Express setup mode's configuration page.
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/connect-mdp.png)
+
+Click on continue button on the warning page.
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/connect-warning.png)
+
+You will access to the switch's management page.
+![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-manager.png)
 
 </details>
 
