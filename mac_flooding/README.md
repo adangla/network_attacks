@@ -254,23 +254,23 @@ If you try to access to the switch's management page directly after those steps,
 
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-switch.png)
 
-As there is no DHCP server anymore (Express setup is done), your IP address is probably is still 10.0.0.2 (or other, you can check with the command `ip a`). If you did not put to your computer, an IP of the same network, you can't access to the management page.
+As there is no DHCP server anymore (Express setup is done), your IP address is probably is still `10.0.0.2` (or other, you can check with the command `ip a`). If you did not put to your computer, an IP of the same network, you can't access to the management page.
 
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa.png)
 
 I suggest deactivating the network-manager service with the command:
-`(sudo) systemctl stop network-manager`
+```(sudo) systemctl stop network-manager```
 I had some trouble with it like the fixed IP I put was deleted. 
 
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-nm.png)
 
 In our configuration, we do not have an DHCP server, so we fixed the IP by hand. To do it we use the command:
-`(sudo) ip addr add <the IP you want to add>/<sub net mask> dev <The interface to which you want to add the IP>`
+```(sudo) ip addr add <the IP you want to add>/<sub net mask> dev <The interface to which you want to add the IP>```
 
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa3.png)
 
 You can delete useless IP with:
-`(sudo) ip addr del <the IP you want to delete>/<sub net mask> dev <The interface to which you want to delete the IP>`
+```(sudo) ip addr del <the IP you want to delete>/<sub net mask> dev <The interface to which you want to delete the IP>```
 
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/cant-connect-ipa2.png)
 
@@ -290,9 +290,17 @@ You will access to the switch's management page.
 
 </details>
 
-
+In order to observe the consequence of the attack directly on the switch, connect by telnet (previously activated when configuration). The password is the one you put during the configuration.
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-telnet.png)
+
+You can observe the switch table by tapping the following command:
+```show mac-address-table```
+*Note that you can autocomplete the command with tab.*
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-show-table.png)
+
+After the attack, show the entire table, will be painful and not really efficient, so in order to have a better vision of the status of the table, use the following command:
+```show mac-address-table count```
+It will show you the number of elements in the table.
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/switch-show-count.png)
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/attack-scapy.png)
 ![](https://github.com/adangla/network_attacks/raw/master/mac_flooding/img/attack-wireshark.png)
